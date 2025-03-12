@@ -52,12 +52,11 @@ section {
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin: calc(0 - var(--col-spacing)) 0;
-    /* GAP TRA LE COLONNE. DA USARE SE RICHIESTO */
-    /* row-gap: calc(2 * var(--col-spacing)); */
+    margin: 0 calc(var(--col-spacing) * -1);
+    row-gap: calc(2 * var(--col-spacing));
 }
 [class*="col"] {
-    padding: var(--col-spacing) 0;
+    padding: 0 var(--col-spacing);
 }
 .col-1-2 {
     width: calc(100% / 2);
@@ -76,6 +75,9 @@ section {
 }
 .col-1-6 {
     width: calc(100% / 6);
+}
+.col-100 {
+    width: 100%;
 }
 .page-wrapper {
     min-height: 100vh;
@@ -111,4 +113,23 @@ main {
 /* MAIN */
 .hero {
     background-color: #B4D0E7;
+}
+.scelta-fatturazione span {
+    margin-right: 1rem;
+}
+.pricing-card {
+    border: 1px solid #00000044;
+    height: 100%;
+}
+.pricing-card-header {
+    border-bottom: 1px solid #00000044;
+    padding: .5rem 0;
+    text-align: center;
+}
+.pricing-card-body,
+.pricing-card-footer {
+    padding: 1rem;
+}
+.pricing-card-body > .row > .col-1-2:last-child {
+    text-align: right;
 }
