@@ -139,3 +139,27 @@ main {
 .pricing-card-body > .row > .col-1-2:last-child {
     text-align: right;
 }
+
+
+
+/* FOOTER */
+.page-footer {
+    background-color: #000000;
+    color: #fff;
+}
+.page-footer-top {
+    padding: 5rem 0;
+}
+.page-footer-bottom .container {
+    padding: 3rem 0;
+    position: relative;
+}
+.page-footer-bottom .container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    background-color: #fff;
+    min-width: 5rem;
+}
