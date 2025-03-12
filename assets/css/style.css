@@ -68,3 +68,26 @@ section {
 .col-1-6 {
     width: calc(100% / 6);
 }
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex-grow: 1;
+}
+
+
+
+/* HEADER */
+.page-header {
+    padding: 1.5rem 1rem;
+}
+.page-header .logo {
+    display: inline-block;
+    /* height: auto; */
+}
+.page-header .logo img {
+    display: inline-block;
+    max-height: 1.5rem;
+}
