@@ -102,13 +102,11 @@ main {
     justify-content: space-between;
     align-items: center;
 }
-.page-header .header-left {
+ .main-menu ul,
+ .secondary-menu ul {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-.page-header a.logo {
-    display: flex;
+    gap: 2rem;
 }
 
 
@@ -135,6 +133,15 @@ main {
 .pricing-card-body,
 .pricing-card-footer {
     padding: 1rem;
+}
+.pricing-features.fa-ul {
+    margin-left: 1.5em;
+}
+.pricing-salient.fa-ul {
+    margin-left: 1.25em;
+}
+.pricing-salient.fa-ul .fa-li {
+    color: #0061FE;
 }
 .pricing-card-body > .row > .col-1-2:last-child {
     text-align: right;
