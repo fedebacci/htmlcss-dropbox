@@ -188,8 +188,8 @@ h4 {
 }
 #hero .col-1-4 i {
     font-size: 3rem;
-    margin-top: calc(100% - 12rem);
-    /* margin-bottom: 7rem; */
+    margin-top: auto;
+    margin-bottom: 7rem;
 }
 #pricing {
     padding-top: 12rem;
