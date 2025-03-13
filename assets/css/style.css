@@ -81,6 +81,18 @@ section {
 .col-1-6 {
     width: calc(100% / 6);
 }
+.col-7-10 {
+    width: calc(100% / 10 * 7);
+}
+.col-3-10 {
+    width: calc(100% / 10 * 3);
+}
+.col-6-10 {
+    width: calc(100% / 10 * 6);
+}
+.col-4-10 {
+    width: calc(100% / 10 * 4);
+}
 .col-100 {
     width: 100%;
 }
@@ -110,12 +122,24 @@ main {
     display: block;
     width: 100%;
 }
+a.decorated-link {
+    text-decoration: underline;
+    color: #453497;
+}
 h1 {
     font-size: 4.5rem;
     font-weight: 900;
 }
 h2 {
     font-size: 2.5rem;
+    margin-bottom: 1em;
+}
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+}
+h4 {
+    margin-bottom: 1em;
 }
 
 
@@ -170,8 +194,25 @@ h2 {
 #pricing {
     padding-top: 12rem;
 }
-#pricing span {
-    margin-right: 1rem;
+#pricing .scelta-fatturazione {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 4rem 0 2rem;
+}
+#pricing .scelta-fatturazione span {
+    display: flex;
+    align-items: center;
+    gap: .33rem;
+}
+.scelta-fatturazione i {
+    font-size: 1.25em;
+}
+.scelta-fatturazione i.fa-solid {
+    color: #0061FE;
+}
+.scelta-fatturazione i.fa-regular {
+    color: #ccc;
 }
 .pricing-card {
     border: 1px solid #00000044;
@@ -184,21 +225,71 @@ h2 {
 }
 .pricing-card-body,
 .pricing-card-footer {
-    padding: 1rem;
+    position: relative;
+    padding: 2.5rem 2rem;
+}
+.pricing-card-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    height: 1px;
+    min-width: 3rem;
+    background-color: #00000044;
+}
+.pricing-plan-price {
+    font-size: .9rem;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+.pricing-plan-payment-details {
+    font-size: .9rem;
+    color: #888;
+    margin-bottom: 3rem;
 }
 .pricing-features.fa-ul {
     margin-left: 1.5em;
+    margin-bottom: 2rem;
+}
+.pricing-features.fa-ul li {
+    margin-bottom: 1.5em;
+}
+.pricing-features + .btn {
+    margin-bottom: 2em;
 }
 .pricing-salient.fa-ul {
     margin-left: 1.25em;
+    margin-top: 2rem;
+}
+.pricing-salient.fa-ul li {
+    margin-bottom: 1.25em;
 }
 .pricing-salient.fa-ul .fa-li {
     color: #0061FE;
 }
-.pricing-card-body > .row > .col-1-2:last-child {
+.pricing-card-body > .row > .col-1-2 + .col-1-2 {
     text-align: right;
 }
-
+#partner {
+    padding-top: 10rem;
+}
+#partner .col-4-10 {
+    padding: calc(var(--col-spacing) * 3) calc(var(--col-spacing) * 3) 0 calc(var(--col-spacing) * 2);
+}
+#partner h3 {
+    line-height: 1.5;
+    margin-bottom: .5rem;
+}
+#partner p {
+    margin-bottom: 2rem;
+}
+/* GIA PRESENTE, ACCORPARE */
+#business-features {
+    padding-top: 10rem;
+}
+#more {
+    padding: 10rem 0;
+}
 
 
 /* FOOTER */
@@ -206,8 +297,15 @@ h2 {
     background-color: #000000;
     color: #fff;
 }
+.footer-menu li {
+    display: block;
+    margin-bottom: 1.25em;
+}
 .page-footer-top {
     padding: 5rem 0;
+}
+.page-footer-bottom {
+    color: #888;
 }
 .page-footer-bottom .container {
     padding: 3rem 0;
@@ -219,6 +317,6 @@ h2 {
     top: 0;
     left: 0;
     height: 1px;
-    background-color: #fff;
-    min-width: 5rem;
+    background-color: #888;
+    min-width: 7.5rem;
 }
