@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body {
-    font-family: sans-serif;
+    font-family: 'Google Sans', sans-serif;
 }
 img {
     max-width: 100%;
@@ -21,8 +21,6 @@ li {
     display: inline-block;
 }
 
-
-
 /* DEBUG */
 .debug ,
 .debug * {
@@ -32,17 +30,24 @@ li {
 
 
 
+
+
 /* ⚙️ VARIABILI ⚙️ */
 :root {
+    /* @ TODO: Provare a dare questa font-size solo a header e cards, il resto sembra essere un po piu grande */
     font-size: 13px;
     --col-spacing: 1rem;
     --hero-offset: 7rem;
     --primary-color: #0061FE;
+    --primary-text-color: #222;
+    --card-border-color: #00000044;
 }
 
 
 
-/* UTILS */
+
+
+/* ⚪ UTILS */
 section {
     padding: 2rem 0;
 }
@@ -111,6 +116,7 @@ main {
     background-color: transparent;
     border: 0;
     font-size: inherit;
+    font-family: inherit;
     cursor: pointer;
 }
 .btn.btn-primary {
@@ -132,8 +138,8 @@ a.decorated-link {
     color: #453497;
 }
 h1 {
-    font-size: 4.5rem;
-    font-weight: 900;
+    font-size: 5rem;
+    font-weight: 700;
 }
 h2 {
     font-size: 2.5rem;
@@ -153,26 +159,36 @@ p,
 span,
 ul,
 label {
-    /* CAMBIA ANCHE PER .pricing-card-header VALUTARE SE USARE VARIABILE (TIPO: primary-text-color?) */
-    color: #333;
+    /* CAMBIA ANCHE PER .pricing-card-header VALUTARE SE USARE VARIABILE (TIPO: --primary-text-color?) */
+    color: var(--primary-text-color);
 }
 
 
 
-/* HEADER */
+
+
+/* ⚪ HEADER */
 .page-header {
     background-color: #fff;
-    padding: 1.2rem 1rem;
+    padding: 1.5rem 1.25rem;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    font-size: 1.15rem;
+
+    /* Mia aggiunta */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 .5rem rgba(0,0,0,0.2);
 }
 .main-menu ul,
 .secondary-menu ul {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 2.25rem;
 }
 .secondary-menu .btn-primary {
     padding-inline: 1rem;
@@ -182,12 +198,14 @@ label {
 }
 .logo img {
     display: block;
-    max-height: 1.4rem;
+    max-height: 1.75rem;
 }
 
 
 
-/* MAIN */
+
+
+/* ⚪ MAIN */
 #hero {
     background-color: #B4D0E7;
     padding-top: 0;
@@ -211,7 +229,10 @@ label {
     margin-bottom: var(--hero-offset);
 }
 #hero img {
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.1));
+    /* Iniziale simile a riferimento */
+    /* filter: drop-shadow(0 0 5px rgba(0,0,0,0.1)); */
+    /* Modificato per consistenza delle ombre con pricing-cards (Mia aggiunta,forse usare variabile) */
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
 }
 #pricing {
     border-top: 1px solid #0000000c;
@@ -224,27 +245,39 @@ label {
     gap: 2rem;
     margin: 4rem 0 2rem;
 }
-#pricing .scelta-fatturazione span {
+#pricing .scelta-fatturazione label {
     display: flex;
     align-items: center;
     gap: .33rem;
 }
-.scelta-fatturazione i {
-    font-size: 1.25em;
+#pricing .scelta-fatturazione label i {
+    font-size: 1.25rem;
 }
-.scelta-fatturazione i.fa-solid {
+#pricing .scelta-fatturazione label i.fa-circle-dot {
     color: var(--primary-color);
 }
-.scelta-fatturazione i.fa-regular {
-    color: #ccc;
+input[type='radio'] {
+    display: none;
+}
+input[type='radio'] + i.fa-circle-dot {
+    display: none;
+}
+input[type='radio']:checked + i.fa-circle-dot {
+    display: block;
+}
+input[type='radio']:checked + i.fa-circle-dot + i.fa-circle {
+    display: none;
 }
 .pricing-card {
-    border: 1px solid #00000044;
+    border: 1px solid var(--card-border-color);
     height: 100%;
+
+    /* Aggiunta */
+    box-shadow: 0 0 1rem rgba(0,0,0,0.2)
 }
 .pricing-card-header {
-    color: #333;
-    border-bottom: 1px solid #00000044;
+    color: var(--primary-text-color);
+    border-bottom: 1px solid var(--card-border-color);
     padding: .5rem 0;
     text-align: center;
 }
@@ -252,7 +285,7 @@ label {
     padding: 2.5rem 2rem;
 }
 .pricing-info-container {
-    min-height: 330px;
+    min-height: 300px;
 }
 .pricing-card-footer {
     position: relative;
@@ -265,7 +298,7 @@ label {
     left: 2rem;
     height: 1px;
     min-width: 3rem;
-    background-color: #00000044;
+    background-color: var(--card-border-color);
 }
 .pricing-plan-price {
     font-size: .9rem;
@@ -322,7 +355,10 @@ label {
 }
 
 
-/* FOOTER */
+
+
+
+/* ⚪ FOOTER */
 .page-footer {
     background-color: #000000;
     color: #fff;
